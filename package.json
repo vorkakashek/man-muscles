@@ -1,0 +1,52 @@
+{
+    "name": "man-muscles",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "private": true,
+    "dependencies": {
+        "core-util-is": "^1.0.2",
+        "gulp": "^4.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vorkakashek/man-muscles.git"
+    },
+    "author": "Anton K - fl.ru/users/xsanto",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vorkakashek/man-muscles/issues"
+    },
+    "homepage": "https://github.com/vorkakashek/man-muscles#readme",
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "IE 10"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "browser-sync": "^2.27.4",
+        "del": "^6.0.0",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-cheerio": "^1.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-csso": "^4.0.1",
+        "gulp-load-plugins": "^2.0.5",
+        "gulp-minify": "^3.1.0",
+        "gulp-notify": "^3.2.0",
+        "gulp-pug": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^5.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-svg-sprite": "^1.5.0",
+        "gulp-svgmin": "^3.0.0",
+        "sass": "^1.44.0",
+        "scss-reset": "^1.2.2"
+    }
+}

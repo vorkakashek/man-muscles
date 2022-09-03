@@ -1,0 +1,46 @@
+main.container
+    include ../_common/header
+    h1 
+        span Создайте своё 
+        br
+        | идеальное тело
+
+    form#start-quiz
+        .label Выберите свою цель: 
+        .start-quiz-select-group
+            button.start-quiz-select
+                picture.start-quiz-select__img
+                    source(media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-1-768.png")
+                    img(src="./assets/images/start-quiz-select-1.png", alt="")
+                .start-quiz-select__name Похудеть
+            button.start-quiz-select
+                picture.start-quiz-select__img
+                    source(media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-2-768.png")
+                    img(src="./assets/images/start-quiz-select-2.png", alt="")
+                .start-quiz-select__name Увеличение 
+                    br 
+                    | мышечной массы
+            button.start-quiz-select
+                picture.start-quiz-select__img
+                    source(media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-3-768.png")
+                    img(src="./assets/images/start-quiz-select-3.png", alt="")
+                .start-quiz-select__name Засушиться
+
+        .start-quiz-input-group
+            label.input-item
+                input(type="checkbox") 
+                span.checkbox
+                span Продолжая, я соглашаюсь с 
+                    a(href="#") Условия использования
+                    | , 
+                    a(href="#") Политика конфеденциальности
+                    | , 
+                    a(href="#") Полтитика возврата
+                    | , 
+                    a(href="#") Условия подписки
+                    | , 
+                    a(href="#") Политика cookies
+            label.input-item
+                input(type="checkbox") 
+                span.checkbox
+                span Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.
