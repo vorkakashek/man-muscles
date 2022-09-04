@@ -1,0 +1,41 @@
+main.container
+    include ../_common/header
+    h1 Ваш персональный план 
+        br
+        | ManMuscles готов!
+
+    .link-banner-group
+        a.link-banner.purple(href="#")
+            img(src="./assets/images/food.png" alt="" loading="lazy")
+            .link-banner-text 
+                span План питания для поддержания формы
+        a.link-banner.white(href="#")
+            img(src="./assets/images/man.png" alt="" loading="lazy")
+            .link-banner-text
+                span Ежедневная тренировка от тренера ManMuscles
+
+    .payment-content
+        h2 Получите свой
+            br 
+            | план за
+
+    .input-group
+        label.input-item
+            input(type="checkbox") 
+            span.checkbox
+            span Продолжая, я соглашаюсь с 
+                a(href="#") Условия использования
+                | , 
+                a(href="#") Политика конфеденциальности
+                | , 
+                a(href="#") Полтитика возврата
+                | , 
+                a(href="#") Условия подписки
+                | , 
+                a(href="#") Политика cookies
+        label.input-item
+            input(type="checkbox") 
+            span.checkbox
+            span Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.
+
+    include pay-info

@@ -1,0 +1,156 @@
+main.container.small
+    form#quiz
+        .quiz-column.quiz-aside
+            .quiz-logo
+                img(src="./assets/images/logo-transparent.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-1.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-2.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-3.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-4.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-5.png" loading="lazy")
+
+        .quiz-column.quiz-content
+            .quiz-header
+                .quiz-progress-wrap
+                    #quiz-progress
+                        .quiz-progress-value
+                    #prev-q
+                        include ../_icons/sign-in
+                .quiz-counter#current-q
+
+            .quiz-footer
+                .btn-large#next-q Далее
+
+            //- q-1
+            .quiz-question
+                h3 Выберите свой тип тела
+                p Выберите тот, который больше всего похож на ваш сейчас.
+
+                .quiz-answer-frame
+                    label.input-radio
+                        input(type="radio" name="q-1" value="Эктоморф" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Эктоморф
+                        .input-radio-desc-text Немного жира и мышц. Трудно набрать вес.
+                    label.input-radio
+                        input(type="radio" name="q-1" value="Мезоморф" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Мезоморф
+                        .input-radio-desc-text Легко теряет жир и быстро набирает мышцы.
+                    label.input-radio
+                        input(type="radio" name="q-1" value="Эндоморф" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Эндоморф
+                        .input-radio-desc-text Легко набирает вес по сравнению с другими типами тела.
+
+                .quiz-extra-content
+                    .quiz-extra-content-column.quiz-extra-content-img
+                        img(src="./assets/images/q-1_2.png" loading="lazy")
+                    .quiz-extra-content-column
+                        h4 Тест для определения типа тела
+                        p Захватите противоположное запястье большим и указательным пальцами. Если вы правша, схватите левое запястье правой рукой. Помните, нет хороших или плохих типов тела.
+                        h4 Большой и указательный палец:
+                        p Эктоморф - обертывание с легкостью
+                            br
+                            | Мезоморф - прикосновения друг к другу
+                            br
+                            | Эндоморф - не вступает в контакт
+
+            //- q-2
+            .quiz-question
+                h3 Выберите проблемные области
+
+                .quiz-answer-frame
+                    label.input-checkbox.fz-medium
+                        input(type="checkbox" name="q-2" value="Слабая грудь")
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-checkbox-main-text Слабая грудь
+                    label.input-checkbox.fz-medium
+                        input(type="checkbox" name="q-2" value="Тонкие руки")
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-checkbox-main-text Тонкие руки
+                    label.input-checkbox.fz-medium
+                        input(type="checkbox" name="q-2" value="Пивной живот")
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-checkbox-main-text Пивной живот
+                    label.input-checkbox.fz-medium
+                        input(type="checkbox" name="q-2" value="Большие бока")
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-checkbox-main-text Большие бока
+                    label.input-checkbox.fz-medium
+                        input(type="checkbox" name="q-2" value="Тонкие ноги")
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-checkbox-main-text Тонкие ноги
+
+            //- q-3
+            .quiz-question
+                h3 Ваши физические показатели
+                .quiz-answer-frame
+                    label.input-text
+                        input(type="number" placeholder="Рост")
+                        span См
+                    label.input-text
+                        input(type="number" placeholder="Вес")
+                        span Кг
+                    label.input-text
+                        input(type="number" placeholder="Целевой вес")
+                        span Кг
+
+            //- q-4
+            .quiz-question 
+                h3 Уровень физической подготовки
+                p Какой у тебя уровень физической подготовки?
+                p Выберите свой текущий уровень физической подготовки, чтобы согласовать план тренировок.
+                .quiz-answer-frame
+                    label.input-radio.fz-medium
+                        input(type="radio" name="q-4" value="Не занимаюсь фитнесом" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Не занимаюсь фитнесом
+                    label.input-radio.fz-medium
+                        input(type="radio" name="q-4" value="Занимаюсь 1-2 раза в неделю" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Занимаюсь 1-2 раза в неделю
+                    label.input-radio.fz-medium
+                        input(type="radio" name="q-4" value="Занимаюсь 2-3 раза в неделю" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Занимаюсь 2-3 раза в неделю
+                    label.input-radio.fz-medium
+                        input(type="radio" name="q-4" value="Занимаюсь 4 и более раз в неделю" autonext)
+                        .input-icon
+                            include ../_icons/check-box
+                        .input-radio-main-text Занимаюсь 4 и более раз в неделю
+            
+            //- q-5
+            .quiz-question 
+                h3 Нравится или не нравится
+                .quiz-answer-frame
+                    .quiz-liker
+                        .quiz-liker-item-group
+                            .quiz-liker-item
+                                img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                .quiz-liker-desc Приседания 1
+                            .quiz-liker-item
+                                img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                .quiz-liker-desc Приседания 2
+                                
+                        .quiz-liker-vote-group
+                            .quiz-liker-vote.yes(data-val="Да")
+                                include ../_icons/like
+                                | Да
+                            .quiz-liker-vote.neutral(data-val="Нейтрально") Нейтрально
+                            .quiz-liker-vote.no(data-val="Нет") 
+                                include ../_icons/like
+                                | Нет
+                            
+                        #ans тут будут ответы

@@ -15,6 +15,9 @@
 // modules
 // @import "modules/index/main";
 
+// pages modules
+@import "modules/payment/payment";
+@import "modules/quiz/quiz";
 
 
 // Main Styles
@@ -27,35 +30,22 @@ body {
     overflow-y: auto;
     font-size: 15px;
     letter-spacing: .03rem;
-    // @include CustomScroll;
+
     @include respond-to(handlers) {
         font-size: 14px;
     }
 }
 
 body {
-    // padding: 0 16px;
     background-image: url('./../assets/images/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top left;
     background-attachment: fixed;
     min-height: 100vh;
-
-    @include respond-to (handlers) {
-        // padding: 0 8px;
-    }
 }
 
-main {
-    // max-width: 1360px;
-    // width: 100%;
-    // margin: 0 auto;
-    // padding: 0 16px;
-    // @include respond-to (handlers) {
-    //     padding: 0 8px;
-    // }
-}
+main {}
 
 .container {
     max-width: 1360px;
@@ -66,15 +56,48 @@ main {
     @include respond-to (handlers) {
         padding: 0 8px;
     }
+
+    &.small {
+        // max-width: 920px;
+    }
 }
 
 h1 {
     font-family: Bebas Neue, sans-serif;
     font-weight: 700;
-    font-size: calc(var(--index) * 4);
+    // font-size: calc(var(--index) * 3.75);
+    font-size: calc(var(--index) * 3);
     color: #fff;
     margin-bottom: 3rem;
     animation: h1 1.5s cubic-bezier(0, .5, .25, .9) backwards;
+
+    // max-width: 1000px;
+    @include respond-to(handlers) {
+        font-size: calc(var(--index) * 3 + 4px);
+    }
+}
+
+h2 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: calc(var(--index) * 2);
+}
+
+h3 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: calc(var(--index) * 1.25);
+
+    @include respond-to(large) {
+        font-size: calc(var(--index) * 3 + 4px);
+    }
+}
+
+h4 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: calc(var(--index) * 1);
+
+    @include respond-to(large) {
+        font-size: calc(var(--index) * 2 + 4px);
+    }
 }
 
 a {
@@ -303,5 +326,29 @@ a {
 
     &:not(:first-child) {
         margin-top: 16px;
+    }
+}
+
+
+.btn-large {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+    background-image: url('./../assets/images/btn-large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 24px 16px;
+    box-shadow: 0 4px 0 rgba(83, 15, 255, 0.7);
+    position: relative;
+    transition: var(--tr);
+    margin: 16px;
+    margin-top: 0;
+    &:hover {
+        filter: brightness(1.25);
     }
 }
