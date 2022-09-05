@@ -37,8 +37,8 @@ function htmlTransfer() {
 };
 
 function libs() {
-	return src('./app/static/libs/**/*')
-		.pipe(dest('build/libs/'));
+	return src('./app/static/js/libs/**/*')
+		.pipe(dest('build/js/libs/'));
 };
 
 // function JSlibs() {

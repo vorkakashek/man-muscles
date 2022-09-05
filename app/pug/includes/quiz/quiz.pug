@@ -8,6 +8,7 @@ main.container.small
             img.quiz-aside-img(src="./assets/images/q-3.png" loading="lazy")
             img.quiz-aside-img(src="./assets/images/q-4.png" loading="lazy")
             img.quiz-aside-img(src="./assets/images/q-5.png" loading="lazy")
+            img.quiz-aside-img(src="./assets/images/q-5.png" loading="lazy")
 
         .quiz-column.quiz-content
             .quiz-header
@@ -130,20 +131,24 @@ main.container.small
                         .input-icon
                             include ../_icons/check-box
                         .input-radio-main-text Занимаюсь 4 и более раз в неделю
-            
+
             //- q-5
             .quiz-question 
                 h3 Нравится или не нравится
                 .quiz-answer-frame
                     .quiz-liker
-                        .quiz-liker-item-group
-                            .quiz-liker-item
-                                img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
-                                .quiz-liker-desc Приседания 1
-                            .quiz-liker-item
-                                img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
-                                .quiz-liker-desc Приседания 2
-                                
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
+                                    .quiz-liker-desc Приседания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                    .quiz-liker-desc Подтягивания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                    .quiz-liker-desc Отжимания
+
                         .quiz-liker-vote-group
                             .quiz-liker-vote.yes(data-val="Да")
                                 include ../_icons/like
@@ -152,5 +157,28 @@ main.container.small
                             .quiz-liker-vote.no(data-val="Нет") 
                                 include ../_icons/like
                                 | Нет
-                            
-                        #ans тут будут ответы
+            //- q-5
+            .quiz-question 
+                h3 Нравится или не нравится
+                .quiz-answer-frame
+                    .quiz-liker
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                    .quiz-liker-desc Приседания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
+                                    .quiz-liker-desc Подтягивания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
+                                    .quiz-liker-desc Отжимания
+                        
+                        .quiz-liker-vote-group
+                            .quiz-liker-vote.yes
+                                include ../_icons/like
+                                | Да
+                            .quiz-liker-vote.neutral Нейтрально
+                            .quiz-liker-vote.no
+                                include ../_icons/like
+                                | Нет
