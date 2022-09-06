@@ -20,7 +20,7 @@ main.container.fullscreen
                 .quiz-counter#current-q
 
             .quiz-footer
-                .btn-large#next-q Далее
+                button.btn-large#next-q(type="button") Далее
 
             //- q-1
             .quiz-question
@@ -157,6 +157,7 @@ main.container.fullscreen
                             .quiz-liker-vote.no(data-val="Нет") 
                                 include ../_icons/like
                                 | Нет
+                        .quiz-liker-voted-message Ваши голоса учтены
             //- q-5
             .quiz-question 
                 h3 Нравится или не нравится
@@ -164,6 +165,15 @@ main.container.fullscreen
                     .quiz-liker(data-name="q-6")
                         .swiper
                             .swiper-wrapper
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
+                                    .quiz-liker-desc Приседания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
+                                    .quiz-liker-desc Подтягивания
+                                .swiper-slide.quiz-liker-item
+                                    img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
+                                    .quiz-liker-desc Отжимания
                                 .swiper-slide.quiz-liker-item
                                     img.quiz-liker-img(src="./assets/images/q-5_liker_1.jpg" loading="lazy")
                                     .quiz-liker-desc Приседания
@@ -182,3 +192,4 @@ main.container.fullscreen
                             .quiz-liker-vote.no
                                 include ../_icons/like
                                 | Нет
+                        .quiz-liker-voted-message Ваши голоса учтены

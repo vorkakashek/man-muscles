@@ -5516,17 +5516,17 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 console.log('[ Script is running ༼ つ ◕_◕ ༽つ ]');
-var swiper_arr = [],
-    // здесь храню все свайперы, чтобы потом к ним можно было обратиться
-answers = [],
+var answers = [],
     // Это массив, сохраннеых ответов
 temp_answer,
-    // Это массив для временного хранения ответов на лайкер
+    // Это переменная для временного хранения ответов (юзаю для лайкеров)
 questions = document.querySelectorAll('.quiz-question'),
     // Это node массив вопросов
 current_q = questions.length,
     // Текущий вопрос // questions.length 
-images = document.querySelectorAll('.quiz-aside-img'); // Это node массив картинок для вопросов 
+images = document.querySelectorAll('.quiz-aside-img'),
+    // Это node массив картинок для вопросов 
+swiper_global = null; // храним глобальный доступ к свайперу
 // Обрабатываем текущий вопрос
 
 var currentQHandler = function currentQHandler() {
@@ -5546,7 +5546,9 @@ var currentQHandler = function currentQHandler() {
 
   prevBtnHandler(); // Показываем кнопку далее?
 
-  nextBtnHandler(); // Инициируем liker 
+  nextBtnHandler(); // На последнем шаге меняем кнопку на Отправить
+
+  finishHandler(); // Инициируем liker 
 
   if (questions[current_q - 1].querySelector('.quiz-liker')) {
     initLiker(questions[current_q - 1].querySelector('.quiz-liker'));
@@ -5554,20 +5556,26 @@ var currentQHandler = function currentQHandler() {
 
 
   document.querySelector('#quiz-progress .quiz-progress-value').style.width = 100 / questions.length * current_q + '%';
+};
+
+var finishHandler = function finishHandler() {
+  var btn = document.querySelector('#next-q');
+
+  if (current_q === questions.length) {
+    btn.innerHTML = "Отправить";
+    btn.setAttribute('type', 'submit');
+  } else {
+    btn.innerHTML = "Далее";
+    btn.setAttribute('type', 'button');
+  }
 }; // Показывать кнопку Далее ? Рендерим вместо нее кнопку Отправить ?
 
 
 var nextBtnHandler = function nextBtnHandler() {
-  var filled = document.querySelectorAll('.quiz-question')[current_q - 1].querySelectorAll('.filled'); // На последнем шаге меняем текст кнопки
-
-  if (current_q === questions.length) {
-    document.querySelector('#next-q').innerHTML = "Отправить";
-  } else {
-    document.querySelector('#next-q').innerHTML = "Далее";
-  } // Валидатор для каждого шага: не / показывать кнопку
-
+  var filled = document.querySelectorAll('.quiz-question')[current_q - 1].querySelectorAll('.filled'); // Валидатор для каждого шага: не / показывать кнопку
 
   if (validator()) {
+    saveForm();
     showNextBtn();
   } else {
     hideNextBtn();
@@ -5600,9 +5608,7 @@ var validator = function validator() {
       return true;
     }
   } // input number
-
-
-  if (inputs_number.length > 0) {
+  else if (inputs_number.length > 0) {
     var filled = 0;
     inputs_number.forEach(function (el) {
       if (el.value.length > 0) {
@@ -5611,17 +5617,6 @@ var validator = function validator() {
     });
 
     if (filled === inputs_number.length) {
-      return true;
-    }
-  } // liker
-
-
-  if (qq.querySelector('.quiz-liker')) {
-    var liker = questions[current_q - 1].querySelector('.quiz-liker');
-    var liker_ind = Array.prototype.indexOf.call(document.querySelectorAll('.quiz-liker'), liker);
-    var s = swiper_arr[liker_ind]; // текущий свайпер
-
-    if (s.realIndex === s.slides.length - s.slides.length) {
       return true;
     }
   }
@@ -5658,6 +5653,11 @@ var prevQ = function prevQ() {
 
 var saveForm = function saveForm() {
   var q = questions[current_q - 2];
+
+  if (current_q === questions.length) {
+    q = questions[current_q - 1];
+  }
+
   var inputs = q.querySelectorAll('input');
   var answer = {
     name: "",
@@ -5697,91 +5697,103 @@ var saveForm = function saveForm() {
   }
 
   console.log(answers);
-}; // Swiper для Лайкеров
+}; // Инициализация Свайпера
 
 
-var swiperInit = function swiperInit() {
-  document.querySelectorAll('.quiz-liker').forEach(function (el, index) {
-    var swiper = new Swiper(el.querySelector('.swiper'), {
-      effect: "cards",
-      grabCursor: false,
-      allowTouchMove: false,
-      allowSlidePrev: false,
-      autoHeight: true,
-      loop: true,
-      loopedSlides: 1,
-      preventInteractionOnTransition: true,
-      on: {
-        init: function init() {
-          console.log('swiper initialized');
-        }
+var initSwiper = function initSwiper(liker) {
+  // swiper_global = null
+  if (swiper_global !== null) {
+    swiper_global.slides.forEach(function (el) {
+      el.classList.remove('voted');
+    }); // swiper_global.destroy()
+  }
+
+  var swiper = new Swiper(liker.querySelector('.swiper'), {
+    effect: "cards",
+    grabCursor: false,
+    allowTouchMove: false,
+    allowSlidePrev: false,
+    autoHeight: true,
+    loop: true,
+    loopedSlides: 1,
+    preventInteractionOnTransition: true,
+    on: {
+      init: function init() {
+        console.log('swiper initialized');
       }
-    });
-    swiper_arr.push(swiper); // сохраним данный свайпер в массив свайперов
+    }
   });
+  swiper_global = swiper;
 }; // Засчитываем голос в лайкере и свайпаем слайдер с картинками
 
 
-var likerVote = function likerVote(ind, liker) {
-  var s = swiper_arr[ind]; // текущий свайпер
+var likerVote = function likerVote(swiper, liker) {
+  swiper.slideNext(300); // следующий слайд
+  // console.log('liker Voted')
 
-  s.slideNext(300); // следующий слайд
-
-  if (s.realIndex === s.slides.length - s.slides.length) {
+  if (swiper.realIndex === swiper.slides.length - swiper.slides.length) {
     _toConsumableArray(liker.querySelectorAll('.swiper-slide')).map(function (e) {
       return e.classList.add('voted');
     });
   } else {
-    liker.querySelectorAll('.swiper-slide')[s.previousIndex].classList.add('voted');
+    liker.querySelectorAll('.swiper-slide')[swiper.previousIndex].classList.add('voted');
   }
-};
+}; // Инициализация Лайкера 
+
 
 var initLiker = function initLiker(liker) {
-  // Инициализируем итемы лайкера
-  // индекс лайкера === индексу свайпера
-  var liker_ind = Array.prototype.indexOf.call(document.querySelectorAll('.quiz-liker'), liker);
-  var s = swiper_arr[liker_ind]; // текущий свайпер
-
-  var answer = []; // храним здесь ответы на данный лайкер
-
   var q_name = liker.getAttribute("data-name"); // data-name вида q-N
 
-  s.on('slideChangeTransitionEnd', function () {
+  var last_answer;
+  var answer = []; // храним здесь ответы на данный лайкер
+
+  liker.querySelector('.quiz-liker-voted-message').style.display = 'none';
+  liker.querySelector('.quiz-liker-vote-group').style.display = 'flex'; // Инициализация свайпера
+
+  initSwiper(liker);
+  var swiper = swiper_global;
+  swiper.on('slideChangeTransitionEnd', function () {
     // Если после смены слайда, показан слайд с индексом 0, считаем, что все ответы учтены
-    if (s.realIndex === s.slides.length - s.slides.length) {
+    answer.push(last_answer);
+
+    if (swiper.activeIndex === swiper.slides.length - 1) {
       temp_answer = {
         name: q_name,
         value: answer
       };
-      liker.querySelector('.quiz-liker-vote-group').innerHTML = 'Ваши голоса учтены';
-      showNextBtn();
+      liker.querySelector('.quiz-liker-vote-group').style.display = 'none';
+      liker.querySelector('.quiz-liker-voted-message').style.display = 'block';
+      showNextBtn(); // Если это последний шаг анкеты, то автоматом сохраним ответ до нажатия на Отправить
+
+      if (current_q === questions.length) {
+        saveForm();
+        console.log('+');
+      }
+
       nextQ();
     }
+  }); // Клик на ДА - не учитывается во время переключения слайда
+
+  liker.querySelector('.yes').addEventListener('click', function (e) {
+    if (!swiper.animating) {
+      last_answer = 'Да';
+      likerVote(swiper, liker);
+    }
+  }); // Клик на НЕЙТРАЛЬНО - не учитывается во время переключения слайда
+
+  liker.querySelector('.neutral').addEventListener('click', function (e) {
+    if (!swiper.animating) {
+      last_answer = 'Нейтрально';
+      likerVote(swiper, liker);
+    }
+  }); // Клик на НЕТ - не учитывается во время переключения слайда
+
+  liker.querySelector('.no').addEventListener('click', function (e) {
+    if (!swiper.animating) {
+      last_answer = 'Нет';
+      likerVote(swiper, liker);
+    }
   });
-
-  if (s.realIndex !== s.slides.length - s.slides.length) {
-    // Клик на ДА - не учитывается во время переключения слайда
-    liker.querySelector('.yes').addEventListener('click', function (e) {
-      if (!s.animating) {
-        answer.push('Да');
-        likerVote(liker_ind, liker);
-      }
-    }); // Клик на НЕЙТРАЛЬНО - не учитывается во время переключения слайда
-
-    liker.querySelector('.neutral').addEventListener('click', function (e) {
-      if (!s.animating) {
-        answer.push('Нейтрально');
-        likerVote(liker_ind, liker);
-      }
-    }); // Клик на НЕТ - не учитывается во время переключения слайда
-
-    liker.querySelector('.no').addEventListener('click', function (e) {
-      if (!s.animating) {
-        answer.push('Нет');
-        likerVote(liker_ind, liker);
-      }
-    });
-  }
 }; // Отслеживаю ивент клика
 
 
@@ -5824,8 +5836,7 @@ if (document.querySelector('input[type="checkbox"]')) {
     elem.addEventListener("change", function (e) {
       var target = e.target;
       var parent = target.closest('.quiz-answer-frame');
-      target.closest('.input-checkbox').classList.toggle('selected'); // console.log('aaa')
-
+      target.closest('.input-checkbox').classList.toggle('selected');
       nextBtnHandler();
     });
   });
@@ -5851,7 +5862,6 @@ if (document.querySelector('input[type="number"]')) {
 
 
 window.onload = function () {
-  swiperInit();
   currentQHandler();
 };
 //# sourceMappingURL=app.js.map

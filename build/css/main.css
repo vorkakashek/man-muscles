@@ -1183,6 +1183,12 @@ footer {
   transition: var(--tr);
 }
 
+.quiz-liker-voted-message {
+  text-align: center;
+  display: none;
+  margin-top: 32px;
+}
+
 html,
 body {
   font-family: RF Dewi;

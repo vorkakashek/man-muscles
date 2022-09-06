@@ -2,12 +2,12 @@
 
 console.log('[ Script is running ༼ つ ◕_◕ ༽つ ]')
 
-let swiper_arr = [], // здесь храню все свайперы, чтобы потом к ним можно было обратиться
-    answers = [], // Это массив, сохраннеых ответов
-    temp_answer, // Это массив для временного хранения ответов на лайкер
+let answers = [], // Это массив, сохраннеых ответов
+    temp_answer, // Это переменная для временного хранения ответов (юзаю для лайкеров)
     questions = document.querySelectorAll('.quiz-question'), // Это node массив вопросов
     current_q = questions.length, // Текущий вопрос // questions.length 
-    images = document.querySelectorAll('.quiz-aside-img') // Это node массив картинок для вопросов 
+    images = document.querySelectorAll('.quiz-aside-img'), // Это node массив картинок для вопросов 
+    swiper_global = null // храним глобальный доступ к свайперу
 
 // Обрабатываем текущий вопрос
 let currentQHandler = () => {
@@ -27,6 +27,9 @@ let currentQHandler = () => {
     // Показываем кнопку далее?
     nextBtnHandler()
 
+    // На последнем шаге меняем кнопку на Отправить
+    finishHandler()
+
     // Инициируем liker 
     if (questions[current_q - 1].querySelector('.quiz-liker')) {
         initLiker(questions[current_q - 1].querySelector('.quiz-liker'))
@@ -36,19 +39,24 @@ let currentQHandler = () => {
     document.querySelector('#quiz-progress .quiz-progress-value').style.width = (100 / questions.length) * current_q + '%'
 }
 
+let finishHandler = () => {
+    let btn = document.querySelector('#next-q')
+    if (current_q === questions.length) {
+        btn.innerHTML = "Отправить"
+        btn.setAttribute('type', 'submit')
+    } else {
+        btn.innerHTML = "Далее"
+        btn.setAttribute('type', 'button')
+    }
+}
+
 // Показывать кнопку Далее ? Рендерим вместо нее кнопку Отправить ?
 let nextBtnHandler = () => {
     let filled = document.querySelectorAll('.quiz-question')[current_q - 1].querySelectorAll('.filled')
 
-    // На последнем шаге меняем текст кнопки
-    if (current_q === questions.length) {
-        document.querySelector('#next-q').innerHTML = "Отправить"
-    } else {
-        document.querySelector('#next-q').innerHTML = "Далее"
-    }
-
     // Валидатор для каждого шага: не / показывать кнопку
     if (validator()) {
+        saveForm()
         showNextBtn()
     } else {
         hideNextBtn()
@@ -80,7 +88,7 @@ let validator = () => {
     }
 
     // input number
-    if (inputs_number.length > 0) {
+    else if (inputs_number.length > 0) {
         let filled = 0
         inputs_number.forEach(el => {
             if (el.value.length > 0) {
@@ -88,17 +96,6 @@ let validator = () => {
             }
         })
         if (filled === inputs_number.length) {
-            return true
-        }
-    }
-
-    // liker
-    if (qq.querySelector('.quiz-liker')) {
-        let liker = questions[current_q - 1].querySelector('.quiz-liker')
-        let liker_ind = Array.prototype.indexOf.call(document.querySelectorAll('.quiz-liker'), liker)
-        let s = swiper_arr[liker_ind] // текущий свайпер
-
-        if (s.realIndex === s.slides.length - s.slides.length) {
             return true
         }
     }
@@ -135,7 +132,11 @@ let prevQ = () => {
 // Сохраняем ответ на текущий вопрос
 let saveForm = () => {
     let q = questions[current_q - 2]
+    if (current_q === questions.length) {
+        q = questions[current_q - 1]
+    }
     let inputs = q.querySelectorAll('input')
+
     let answer = {
         name: "",
         value: []
@@ -175,89 +176,110 @@ let saveForm = () => {
     console.log(answers)
 }
 
-// Swiper для Лайкеров
-let swiperInit = () => {
-    document.querySelectorAll('.quiz-liker').forEach((el, index) => {
-        const swiper = new Swiper(el.querySelector('.swiper'), {
-            effect: "cards",
-            grabCursor: false,
-            allowTouchMove: false,
-            allowSlidePrev: false,
-            autoHeight: true,
-            loop: true,
-            loopedSlides: 1,
-            preventInteractionOnTransition: true,
-            on: {
-                init: function () {
-                    console.log('swiper initialized');
-                },
-            },
-        })
 
-        swiper_arr.push(swiper) // сохраним данный свайпер в массив свайперов
+
+
+// Инициализация Свайпера
+let initSwiper = (liker) => {
+
+    // swiper_global = null
+    if (swiper_global !== null) {
+        swiper_global.slides.forEach(el => {
+            el.classList.remove('voted')
+        })
+        // swiper_global.destroy()
+    }
+
+    let swiper = new Swiper(liker.querySelector('.swiper'), {
+        effect: "cards",
+        grabCursor: false,
+        allowTouchMove: false,
+        allowSlidePrev: false,
+        autoHeight: true,
+        loop: true,
+        loopedSlides: 1,
+        preventInteractionOnTransition: true,
+        on: {
+            init: () => {
+                console.log('swiper initialized')
+            },
+        },
     })
+
+    swiper_global = swiper
 }
 
 // Засчитываем голос в лайкере и свайпаем слайдер с картинками
-let likerVote = (ind, liker) => {
-    let s = swiper_arr[ind] // текущий свайпер
+let likerVote = (swiper, liker) => {
+    swiper.slideNext(300) // следующий слайд
+    // console.log('liker Voted')
 
-    s.slideNext(300) // следующий слайд
-
-    if (s.realIndex === s.slides.length - s.slides.length) {
+    if (swiper.realIndex === swiper.slides.length - swiper.slides.length) {
         [...liker.querySelectorAll('.swiper-slide')].map(e => e.classList.add('voted'))
     } else {
-        liker.querySelectorAll('.swiper-slide')[s.previousIndex].classList.add('voted')
+        liker.querySelectorAll('.swiper-slide')[swiper.previousIndex].classList.add('voted')
     }
 }
 
-let initLiker = (liker) => {
-    // Инициализируем итемы лайкера
-    // индекс лайкера === индексу свайпера
-    let liker_ind = Array.prototype.indexOf.call(document.querySelectorAll('.quiz-liker'), liker)
-    let s = swiper_arr[liker_ind] // текущий свайпер
-    let answer = [] // храним здесь ответы на данный лайкер
-    let q_name = liker.getAttribute("data-name") // data-name вида q-N
 
-    s.on('slideChangeTransitionEnd', () => {
+// Инициализация Лайкера 
+let initLiker = (liker) => {
+
+    let q_name = liker.getAttribute("data-name") // data-name вида q-N
+    let last_answer
+    let answer = [] // храним здесь ответы на данный лайкер
+
+    liker.querySelector('.quiz-liker-voted-message').style.display = 'none';
+    liker.querySelector('.quiz-liker-vote-group').style.display = 'flex';
+
+
+    // Инициализация свайпера
+    initSwiper(liker)
+    let swiper = swiper_global
+
+    swiper.on('slideChangeTransitionEnd', () => {
         // Если после смены слайда, показан слайд с индексом 0, считаем, что все ответы учтены
-        if (s.realIndex === s.slides.length - s.slides.length) {
+        answer.push(last_answer)
+        if (swiper.activeIndex === swiper.slides.length - 1) {
             temp_answer = {
                 name: q_name,
                 value: answer
             }
-
-            liker.querySelector('.quiz-liker-vote-group').innerHTML = 'Ваши голоса учтены';
+            liker.querySelector('.quiz-liker-vote-group').style.display = 'none';
+            liker.querySelector('.quiz-liker-voted-message').style.display = 'block';
             showNextBtn()
+            // Если это последний шаг анкеты, то автоматом сохраним ответ до нажатия на Отправить
+            if (current_q === questions.length) {
+                saveForm()
+                console.log('+')
+            }
             nextQ()
         }
     })
 
-    if (s.realIndex !== s.slides.length - s.slides.length) {
-        // Клик на ДА - не учитывается во время переключения слайда
-        liker.querySelector('.yes').addEventListener('click', (e) => {
-            if (!s.animating) {
-                answer.push('Да')
-                likerVote(liker_ind, liker)
-            }
-        })
+    // Клик на ДА - не учитывается во время переключения слайда
+    liker.querySelector('.yes').addEventListener('click', (e) => {
+        if (!swiper.animating) {
+            last_answer = 'Да'
+            likerVote(swiper, liker)
+        }
+    })
 
-        // Клик на НЕЙТРАЛЬНО - не учитывается во время переключения слайда
-        liker.querySelector('.neutral').addEventListener('click', (e) => {
-            if (!s.animating) {
-                answer.push('Нейтрально')
-                likerVote(liker_ind, liker)
-            }
-        })
+    // Клик на НЕЙТРАЛЬНО - не учитывается во время переключения слайда
+    liker.querySelector('.neutral').addEventListener('click', (e) => {
+        if (!swiper.animating) {
+            last_answer = 'Нейтрально'
+            likerVote(swiper, liker)
+        }
+    })
 
-        // Клик на НЕТ - не учитывается во время переключения слайда
-        liker.querySelector('.no').addEventListener('click', (e) => {
-            if (!s.animating) {
-                answer.push('Нет')
-                likerVote(liker_ind, liker)
-            }
-        })
-    }
+    // Клик на НЕТ - не учитывается во время переключения слайда
+    liker.querySelector('.no').addEventListener('click', (e) => {
+        if (!swiper.animating) {
+            last_answer = 'Нет'
+            likerVote(swiper, liker)
+        }
+    })
 }
 
 // Отслеживаю ивент клика
@@ -300,7 +322,6 @@ if (document.querySelector('input[type="checkbox"]')) {
             let parent = target.closest('.quiz-answer-frame');
 
             target.closest('.input-checkbox').classList.toggle('selected')
-            // console.log('aaa')
             nextBtnHandler()
         });
     });
@@ -326,6 +347,5 @@ if (document.querySelector('input[type="number"]')) {
 
 // После загрузки стр вызываем функции
 window.onload = function () {
-    swiperInit()
     currentQHandler()
 }
