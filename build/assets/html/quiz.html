@@ -15,7 +15,7 @@
     <main class="container small">
       <form id="quiz">
         <div class="quiz-column quiz-aside">
-          <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy">
+          <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy">
         </div>
         <div class="quiz-column quiz-content">
           <div class="quiz-header">
@@ -203,12 +203,17 @@
             <h3>Нравится или не нравится</h3>
             <div class="quiz-answer-frame">
               <div class="quiz-liker">
-                <div class="quiz-liker-item-group">
-                  <div class="quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">
-                    <div class="quiz-liker-desc">Приседания 1</div>
-                  </div>
-                  <div class="quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">
-                    <div class="quiz-liker-desc">Приседания 2</div>
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Приседания</div>
+                    </div>
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Подтягивания</div>
+                    </div>
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Отжимания</div>
+                    </div>
                   </div>
                 </div>
                 <div class="quiz-liker-vote-group">
@@ -226,14 +231,48 @@
                     </svg>Нет
                   </div>
                 </div>
-                <div id="ans">тут будут ответы</div>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-question"> 
+            <h3>Нравится или не нравится</h3>
+            <div class="quiz-answer-frame">
+              <div class="quiz-liker">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Приседания</div>
+                    </div>
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Подтягивания</div>
+                    </div>
+                    <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy">
+                      <div class="quiz-liker-desc">Отжимания</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-liker-vote-group">
+                  <div class="quiz-liker-vote yes">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                      <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                      <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                    </svg>Да
+                  </div>
+                  <div class="quiz-liker-vote neutral">Нейтрально</div>
+                  <div class="quiz-liker-vote no">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                      <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                      <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                    </svg>Нет
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </form>
     </main>
-    <script async src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script async src="./js/app-min.js"></script>
+    <script src="./js/libs/swiper-bundle.min.js"></script>
+    <script src="./js/app-min.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-main.container.fullscreen
-    form#quiz(action="#")
+main.container.small
+    form#quiz
         .quiz-column.quiz-aside
             .quiz-logo
                 img(src="./assets/images/logo-transparent.png" loading="lazy")
@@ -96,13 +96,13 @@ main.container.fullscreen
                 h3 Ваши физические показатели
                 .quiz-answer-frame
                     label.input-text
-                        input(type="number" name="q-3" placeholder="Рост")
+                        input(type="number" placeholder="Рост")
                         span См
                     label.input-text
-                        input(type="number" name="q-3" placeholder="Вес")
+                        input(type="number" placeholder="Вес")
                         span Кг
                     label.input-text
-                        input(type="number" name="q-3" placeholder="Целевой вес")
+                        input(type="number" placeholder="Целевой вес")
                         span Кг
 
             //- q-4
@@ -136,7 +136,7 @@ main.container.fullscreen
             .quiz-question 
                 h3 Нравится или не нравится
                 .quiz-answer-frame
-                    .quiz-liker(data-name="q-5")
+                    .quiz-liker
                         .swiper
                             .swiper-wrapper
                                 .swiper-slide.quiz-liker-item
@@ -161,7 +161,7 @@ main.container.fullscreen
             .quiz-question 
                 h3 Нравится или не нравится
                 .quiz-answer-frame
-                    .quiz-liker(data-name="q-6")
+                    .quiz-liker
                         .swiper
                             .swiper-wrapper
                                 .swiper-slide.quiz-liker-item
@@ -173,7 +173,7 @@ main.container.fullscreen
                                 .swiper-slide.quiz-liker-item
                                     img.quiz-liker-img(src="./assets/images/q-5_liker_2.jpg" loading="lazy")
                                     .quiz-liker-desc Отжимания
-
+                        
                         .quiz-liker-vote-group
                             .quiz-liker-vote.yes
                                 include ../_icons/like

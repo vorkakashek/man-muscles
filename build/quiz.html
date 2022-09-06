@@ -5,15 +5,16 @@
       <title>Man Muscles</title>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui">
       <meta name="description" content="Man Muscles">
+      <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="./css/main.css" type="text/css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     </head>
   </head>
   <body>
-    <main class="container small">
-      <form id="quiz">
+    <main class="container fullscreen">
+      <form id="quiz" action="#">
         <div class="quiz-column quiz-aside">
           <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy">
         </div>
@@ -142,13 +143,13 @@
             <h3>Ваши физические показатели</h3>
             <div class="quiz-answer-frame">
               <label class="input-text">
-                <input type="number" placeholder="Рост"><span>См</span>
+                <input type="number" name="q-3" placeholder="Рост"><span>См</span>
               </label>
               <label class="input-text">
-                <input type="number" placeholder="Вес"><span>Кг</span>
+                <input type="number" name="q-3" placeholder="Вес"><span>Кг</span>
               </label>
               <label class="input-text">
-                <input type="number" placeholder="Целевой вес"><span>Кг</span>
+                <input type="number" name="q-3" placeholder="Целевой вес"><span>Кг</span>
               </label>
             </div>
           </div>
@@ -202,7 +203,7 @@
           <div class="quiz-question"> 
             <h3>Нравится или не нравится</h3>
             <div class="quiz-answer-frame">
-              <div class="quiz-liker">
+              <div class="quiz-liker" data-name="q-5">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy">
@@ -237,7 +238,7 @@
           <div class="quiz-question"> 
             <h3>Нравится или не нравится</h3>
             <div class="quiz-answer-frame">
-              <div class="quiz-liker">
+              <div class="quiz-liker" data-name="q-6">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy">

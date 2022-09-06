@@ -42,10 +42,58 @@ body {
     background-repeat: no-repeat;
     background-position: top left;
     background-attachment: fixed;
-    min-height: 100vh;
+    // min-height: 100vh;
+    // overflow: hidden;
+    // min-height: 100vh;
+    // position: fixed;
+    // width: 100vw;
+    // height: 100vh;
+    /* Use vh as a fallback for browsers that do not support Custom Properties */
+    // height: calc(var(--vh, 1vh) * 100);
 }
 
-main {}
+main {
+    // @include respond-to (small) {
+    //     position: fixed;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     display: flex;
+    //     padding: 8px !important;
+    // }
+
+    &.fullscreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        padding: 8px !important;
+        max-width: unset;
+    }
+}
+
+#quiz {
+    // @include respond-to (small) {
+    //     display: flex;
+    //     min-height: unset;
+    //     height: unset;
+    //     margin: 0;
+    //     width: 100%;
+    // }
+
+    display: flex;
+    min-height: unset;
+    height: unset;
+    margin: 0 auto;
+    // width: 100%;
+    width: 100%;
+    max-width: 1360px;
+    max-height: 960px;
+    // height: fit-content;
+}
 
 .container {
     max-width: 1360px;
@@ -58,13 +106,14 @@ main {}
     }
 }
 
+
 h1 {
     font-family: Bebas Neue, sans-serif;
     font-weight: 700;
     // font-size: calc(var(--index) * 3.75);
     // font-size: calc(var(--index) * 3);
     // font-size: calc(var(--index) + 3vmax);
-    font-size: 7rem;
+    font-size: 5rem;
     // font-size: calc(6vmax + 10px);
     color: #fff;
     margin-bottom: 3rem;
@@ -385,7 +434,7 @@ a {
     box-shadow: 0 4px 0 rgba(83, 15, 255, 0.7);
     position: relative;
     transition: var(--tr);
-    margin: 16px;
+    // margin: 16px;
     margin-top: 0;
 
     &:hover {
