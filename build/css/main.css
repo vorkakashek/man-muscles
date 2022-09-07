@@ -652,7 +652,7 @@ footer {
 }
 
 #quiz {
-  background-image: url("./../assets/images/noise-bg.jpg");
+  background-image: url("./../assets/images/noise-bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
@@ -1239,7 +1239,7 @@ body {
 }
 
 body {
-  background-image: url("./../assets/images/bg.jpg");
+  background-image: url("./../assets/images/bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
@@ -1566,7 +1566,7 @@ a:hover {
   font-size: 28px;
   cursor: pointer;
   color: #fff;
-  background-image: url("./../assets/images/btn-large.jpg");
+  background-image: url("./../assets/images/btn-large.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
