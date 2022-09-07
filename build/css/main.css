@@ -566,14 +566,14 @@ footer {
   margin-right: 16px;
 }
 .link-banner.purple {
-  background-image: url("./../assets/images/link-banner-1.png");
+  background-image: url("./../assets/images/link-banner-1.webp");
   color: #fff;
 }
 .link-banner.purple img {
   margin-left: 16px;
 }
 .link-banner.white {
-  background-image: url("./../assets/images/link-banner-2.png");
+  background-image: url("./../assets/images/link-banner-2.webp");
   color: #303030;
 }
 .link-banner.white img {
