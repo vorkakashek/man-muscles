@@ -1015,7 +1015,6 @@ footer {
 
 .input-radio-main-text {
   font-size: 28px;
-  margin-right: 30px;
 }
 @media only screen and (max-width: 767.9px) {
   .input-radio-main-text {
@@ -1073,6 +1072,9 @@ footer {
   font-size: 20px;
   padding: 16px 24px;
   background-color: rgba(255, 255, 255, 0.05);
+}
+.input-text.email {
+  padding-left: 8px;
 }
 .input-text:not(:first-child) {
   margin-top: 16px;
@@ -1187,6 +1189,36 @@ footer {
   text-align: center;
   display: none;
   margin-top: 32px;
+}
+
+.mob-icon {
+  display: none;
+  margin-right: 16px;
+  width: 2.75rem;
+  height: 2.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (max-width: 991.9px) {
+  .mob-icon {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+
+.input-radio-answer {
+  margin-right: 32px;
+}
+
+@media only screen and (max-width: 991.9px) {
+  .input-radio,
+.input-checkbox,
+.input-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+  }
 }
 
 html,

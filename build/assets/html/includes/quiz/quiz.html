@@ -1,8 +1,8 @@
 
-<main class="container small">
-  <form id="quiz">
+<main class="container fullscreen">
+  <form id="quiz" action="#">
     <div class="quiz-column quiz-aside">
-      <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"/></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"/>
+      <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"/></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-6.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-7.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-8.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-9.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-10.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-11.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-12.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-13.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-14.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-15.png" loading="lazy"/>
     </div>
     <div class="quiz-column quiz-content">
       <div class="quiz-header">
@@ -20,13 +20,13 @@
         <div class="quiz-counter" id="current-q"></div>
       </div>
       <div class="quiz-footer">
-        <div class="btn-large" id="next-q">Далее</div>
+        <button class="btn-large" id="next-q" type="button">Далее</button>
       </div>
       <div class="quiz-question">
         <h3>Выберите свой тип тела</h3>
         <p>Выберите тот, который больше всего похож на ваш сейчас.</p>
         <div class="quiz-answer-frame">
-          <label class="input-radio">
+          <label class="input-radio"><img class="mob-icon" src="./assets/images/q-1-mob-icon_1.png" loading="lazy"/>
             <input type="radio" name="q-1" value="Эктоморф" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -34,10 +34,12 @@
                 <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
               </svg>
             </div>
-            <div class="input-radio-main-text">Эктоморф</div>
-            <div class="input-radio-desc-text">Немного жира и мышц. Трудно набрать вес.</div>
+            <div class="input-radio-answer">
+              <div class="input-radio-main-text">Эктоморф</div>
+              <div class="input-radio-desc-text">Немного жира и мышц. Трудно набрать вес.</div>
+            </div>
           </label>
-          <label class="input-radio">
+          <label class="input-radio"><img class="mob-icon" src="./assets/images/q-1-mob-icon_2.png" loading="lazy"/>
             <input type="radio" name="q-1" value="Мезоморф" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -45,10 +47,12 @@
                 <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
               </svg>
             </div>
-            <div class="input-radio-main-text">Мезоморф</div>
-            <div class="input-radio-desc-text">Легко теряет жир и быстро набирает мышцы.</div>
+            <div class="input-radio-answer">
+              <div class="input-radio-main-text">Мезоморф</div>
+              <div class="input-radio-desc-text">Легко теряет жир и быстро набирает мышцы.</div>
+            </div>
           </label>
-          <label class="input-radio">
+          <label class="input-radio"><img class="mob-icon" src="./assets/images/q-1-mob-icon_3.png" loading="lazy"/>
             <input type="radio" name="q-1" value="Эндоморф" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -56,8 +60,10 @@
                 <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
               </svg>
             </div>
-            <div class="input-radio-main-text">Эндоморф</div>
-            <div class="input-radio-desc-text">Легко набирает вес по сравнению с другими типами тела.</div>
+            <div class="input-radio-answer">
+              <div class="input-radio-main-text">Эндоморф</div>
+              <div class="input-radio-desc-text">Легко набирает вес по сравнению с другими типами тела.</div>
+            </div>
           </label>
         </div>
         <div class="quiz-extra-content">
@@ -73,7 +79,7 @@
       <div class="quiz-question">
         <h3>Выберите проблемные области</h3>
         <div class="quiz-answer-frame">
-          <label class="input-checkbox fz-medium">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-2-mob-icon_1.png" loading="lazy"/>
             <input type="checkbox" name="q-2" value="Слабая грудь"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -83,7 +89,7 @@
             </div>
             <div class="input-checkbox-main-text">Слабая грудь</div>
           </label>
-          <label class="input-checkbox fz-medium">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-2-mob-icon_2.png" loading="lazy"/>
             <input type="checkbox" name="q-2" value="Тонкие руки"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -93,7 +99,7 @@
             </div>
             <div class="input-checkbox-main-text">Тонкие руки</div>
           </label>
-          <label class="input-checkbox fz-medium">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-2-mob-icon_3.png" loading="lazy"/>
             <input type="checkbox" name="q-2" value="Пивной живот"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -103,7 +109,7 @@
             </div>
             <div class="input-checkbox-main-text">Пивной живот</div>
           </label>
-          <label class="input-checkbox fz-medium">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-2-mob-icon_4.png" loading="lazy"/>
             <input type="checkbox" name="q-2" value="Большие бока"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -113,7 +119,7 @@
             </div>
             <div class="input-checkbox-main-text">Большие бока</div>
           </label>
-          <label class="input-checkbox fz-medium">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-2-mob-icon_5.png" loading="lazy"/>
             <input type="checkbox" name="q-2" value="Тонкие ноги"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -128,14 +134,14 @@
       <div class="quiz-question">
         <h3>Ваши физические показатели</h3>
         <div class="quiz-answer-frame">
-          <label class="input-text">
-            <input type="number" placeholder="Рост"/><span>См</span>
+          <label class="input-text"><img class="mob-icon" src="./assets/images/q-3-mob-icon_1.png" loading="lazy"/>
+            <input type="number" name="q-3" placeholder="Рост"/><span>См</span>
           </label>
-          <label class="input-text">
-            <input type="number" placeholder="Вес"/><span>Кг</span>
+          <label class="input-text"><img class="mob-icon" src="./assets/images/q-3-mob-icon_2.png" loading="lazy"/>
+            <input type="number" name="q-3" placeholder="Вес"/><span>Кг</span>
           </label>
-          <label class="input-text">
-            <input type="number" placeholder="Целевой вес"/><span>Кг</span>
+          <label class="input-text"><img class="mob-icon" src="./assets/images/q-3-mob-icon_3.png" loading="lazy"/>
+            <input type="number" name="q-3" placeholder="Целевой вес"/><span>Кг</span>
           </label>
         </div>
       </div>
@@ -144,7 +150,7 @@
         <p>Какой у тебя уровень физической подготовки?</p>
         <p>Выберите свой текущий уровень физической подготовки, чтобы согласовать план тренировок.</p>
         <div class="quiz-answer-frame">
-          <label class="input-radio fz-medium">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-4-mob-icon_1.png" loading="lazy"/>
             <input type="radio" name="q-4" value="Не занимаюсь фитнесом" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -154,7 +160,7 @@
             </div>
             <div class="input-radio-main-text">Не занимаюсь фитнесом</div>
           </label>
-          <label class="input-radio fz-medium">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-4-mob-icon_2.png" loading="lazy"/>
             <input type="radio" name="q-4" value="Занимаюсь 1-2 раза в неделю" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -164,7 +170,7 @@
             </div>
             <div class="input-radio-main-text">Занимаюсь 1-2 раза в неделю</div>
           </label>
-          <label class="input-radio fz-medium">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-4-mob-icon_3.png" loading="lazy"/>
             <input type="radio" name="q-4" value="Занимаюсь 2-3 раза в неделю" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -174,7 +180,7 @@
             </div>
             <div class="input-radio-main-text">Занимаюсь 2-3 раза в неделю</div>
           </label>
-          <label class="input-radio fz-medium">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-4-mob-icon_4.png" loading="lazy"/>
             <input type="radio" name="q-4" value="Занимаюсь 4 и более раз в неделю" autonext="autonext"/>
             <div class="input-icon">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -189,17 +195,23 @@
       <div class="quiz-question"> 
         <h3>Нравится или не нравится</h3>
         <div class="quiz-answer-frame">
-          <div class="quiz-liker">
+          <div class="quiz-liker" data-name="q-5">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
                   <div class="quiz-liker-desc">Приседания</div>
                 </div>
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
                   <div class="quiz-liker-desc">Подтягивания</div>
                 </div>
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_3.jpg" loading="lazy"/>
                   <div class="quiz-liker-desc">Отжимания</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_4.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Выпады</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_5.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Планка</div>
                 </div>
               </div>
             </div>
@@ -218,42 +230,403 @@
                 </svg>Нет
               </div>
             </div>
+            <div class="quiz-liker-voted-message">Готово!</div>
           </div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Сталкивались ли вы с какими-либо из этих проблем</h3>
+        <p>в своих предыдущих попытках фитнеса?</p>
+        <div class="quiz-answer-frame">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-6-mob-icon_1.png" loading="lazy"/>
+            <input type="checkbox" name="q-6" value="Отсутствие мотивации"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Отсутствие мотивации</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-6-mob-icon_2.png" loading="lazy"/>
+            <input type="checkbox" name="q-6" value="У меня не было четкого плана"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">У меня не было четкого плана</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-6-mob-icon_3.png" loading="lazy"/>
+            <input type="checkbox" name="q-6" value="Мои тренировки были слишком тяжелыми"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Мои тренировки были слишком тяжелыми</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-6-mob-icon_4.png" loading="lazy"/>
+            <input type="checkbox" name="q-6" value="Занимаюсь 4 и более раз в неделю"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Занимаюсь 4 и более раз в неделю</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Как менялся ваш вес за последний год?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-7-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-7" value="Увеличился" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Увеличился</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-7-mob-icon_2.png" loading="lazy"/>
+            <input type="radio" name="q-7" value="Уменьшился" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Уменьшился</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-7-mob-icon_3.png" loading="lazy"/>
+            <input type="radio" name="q-7" value="Вес не менялся" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Вес не менялся</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Во сколько вы обычно завтракаете?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-8" value="С 6 до 8 утра" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 6 до 8 утра</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-8" value="Между 8 и 10 часами утра" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Между 8 и 10 часами утра</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-8" value="С 10 утра до полудня" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 10 утра до полудня</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Во сколько вы обычно обедаете?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-9" value="С 10 утра до 12" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 10 утра до 12</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-9" value="С 12 до 14 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 12 до 14 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-9" value="С 14 до 16 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 14 до 16 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-9-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-9" value="Я обычно пропускаю обед" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Я обычно пропускаю обед</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Во сколько вы обычно ужинаете?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-10" value="С 16 до 18 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 16 до 18 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-10" value="С 18 до 20 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 18 до 20 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-10" value="С 20 до 22 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 20 до 22 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-9-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-10" value="Я обычно пропускаю обед" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Я обычно пропускаю ужин</div>
+          </label>
         </div>
       </div>
       <div class="quiz-question"> 
         <h3>Нравится или не нравится</h3>
         <div class="quiz-answer-frame">
-          <div class="quiz-liker">
+          <div class="quiz-liker" data-name="q-11">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
-                  <div class="quiz-liker-desc">Приседания</div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_1.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Свинина</div>
                 </div>
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
-                  <div class="quiz-liker-desc">Подтягивания</div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_2.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Говядина</div>
                 </div>
-                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
-                  <div class="quiz-liker-desc">Отжимания</div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_3.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Курица</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_4.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Индейка</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_5.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Рыба</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-11_liker_6.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Морепродукты</div>
                 </div>
               </div>
             </div>
             <div class="quiz-liker-vote-group">
-              <div class="quiz-liker-vote yes">
+              <div class="quiz-liker-vote yes" data-val="Да">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
                   <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
                   <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
                 </svg>Да
               </div>
-              <div class="quiz-liker-vote neutral">Нейтрально</div>
-              <div class="quiz-liker-vote no">
+              <div class="quiz-liker-vote neutral" data-val="Нейтрально">Нейтрально</div>
+              <div class="quiz-liker-vote no" data-val="Нет"> 
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
                   <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
                   <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
                 </svg>Нет
               </div>
             </div>
+            <div class="quiz-liker-voted-message">Готово!</div>
           </div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>В котором часу в среднем вы просыпаетесь?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-12" value="С 6 до 8 утра" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 6 до 8 утра</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-12" value="Между 8 и 10 часами утра" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Между 8 и 10 часами утра</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-8-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-12" value="С 10 утра до полудня" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">С 10 утра до полудня</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Сколько часов в среднем вы спите?</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-13-mob-icon_1.png" loading="lazy"/>
+            <input type="radio" name="q-13" value="Менее 5 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Менее 5 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-13-mob-icon_2.png" loading="lazy"/>
+            <input type="radio" name="q-13" value="5-6 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">5-6 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-13-mob-icon_3.png" loading="lazy"/>
+            <input type="radio" name="q-13" value="7-8 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">7-8 часов</div>
+          </label>
+          <label class="input-radio fz-medium"><img class="mob-icon" src="./assets/images/q-13-mob-icon_4.png" loading="lazy"/>
+            <input type="radio" name="q-13" value="Более 8 часов" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Более 8 часов</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Ваши вредные привычки</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-14-mob-icon_1.png" loading="lazy"/>
+            <input type="checkbox" name="q-14" value="Алкоголь"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Алкоголь</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-14-mob-icon_2.png" loading="lazy"/>
+            <input type="checkbox" name="q-14" value="Сигареты"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Сигареты</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-14-mob-icon_3.png" loading="lazy"/>
+            <input type="checkbox" name="q-14" value="Много сладкого"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Много сладкого</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-14-mob-icon_4.png" loading="lazy"/>
+            <input type="checkbox" name="q-14" value="Много кофе"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Много кофе</div>
+          </label>
+          <label class="input-checkbox fz-medium"><img class="mob-icon" src="./assets/images/q-14-mob-icon_5.png" loading="lazy"/>
+            <input type="checkbox" name="q-14" value="Газировка"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Газировка</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Получите свой фитнес план сегодня</h3>
+        <p>для набора мышечной массы</p>
+        <div class="quiz-answer-frame">
+          <label class="input-text email"><img class="mob-icon" src="./assets/images/q-15-mob-icon_1.png" loading="lazy"/>
+            <input type="email" name="q-15" placeholder="Введите вашу почту" required="required"/>
+          </label>
         </div>
       </div>
     </div>

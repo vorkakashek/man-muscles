@@ -1,0 +1,261 @@
+
+<main class="container small">
+  <form id="quiz">
+    <div class="quiz-column quiz-aside">
+      <div class="quiz-logo"><img src="./assets/images/logo-transparent.png" loading="lazy"/></div><img class="quiz-aside-img" src="./assets/images/q-1.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-2.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-3.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-4.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"/><img class="quiz-aside-img" src="./assets/images/q-5.png" loading="lazy"/>
+    </div>
+    <div class="quiz-column quiz-content">
+      <div class="quiz-header">
+        <div class="quiz-progress-wrap">
+          <div id="quiz-progress">
+            <div class="quiz-progress-value"></div>
+          </div>
+          <div id="prev-q">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+              <path id="arrow" d="M3.017,13.5H14.455l-2.689,2.689,2.121,2.122,4.189-4.19a3,3,0,0,0,0-4.242l-4.2-4.2L11.753,7.8l2.7,2.7H3.017Z"></path>
+              <path d="M20.5,0H3.5A3.528,3.528,0,0,0,0,3.552V7.9H3V3.552A.526.526,0,0,1,3.5,3h17a.526.526,0,0,1,.5.548v16.9a.526.526,0,0,1-.5.548H3.5a.526.526,0,0,1-.5-.548V16.1H0v4.352A3.528,3.528,0,0,0,3.5,24h17A3.528,3.528,0,0,0,24,20.448V3.552A3.528,3.528,0,0,0,20.5,0Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="quiz-counter" id="current-q"></div>
+      </div>
+      <div class="quiz-footer">
+        <div class="btn-large" id="next-q">Далее</div>
+      </div>
+      <div class="quiz-question">
+        <h3>Выберите свой тип тела</h3>
+        <p>Выберите тот, который больше всего похож на ваш сейчас.</p>
+        <div class="quiz-answer-frame">
+          <label class="input-radio">
+            <input type="radio" name="q-1" value="Эктоморф" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Эктоморф</div>
+            <div class="input-radio-desc-text">Немного жира и мышц. Трудно набрать вес.</div>
+          </label>
+          <label class="input-radio">
+            <input type="radio" name="q-1" value="Мезоморф" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Мезоморф</div>
+            <div class="input-radio-desc-text">Легко теряет жир и быстро набирает мышцы.</div>
+          </label>
+          <label class="input-radio">
+            <input type="radio" name="q-1" value="Эндоморф" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Эндоморф</div>
+            <div class="input-radio-desc-text">Легко набирает вес по сравнению с другими типами тела.</div>
+          </label>
+        </div>
+        <div class="quiz-extra-content">
+          <div class="quiz-extra-content-column quiz-extra-content-img"><img src="./assets/images/q-1_2.png" loading="lazy"/></div>
+          <div class="quiz-extra-content-column">
+            <h4>Тест для определения типа тела</h4>
+            <p>Захватите противоположное запястье большим и указательным пальцами. Если вы правша, схватите левое запястье правой рукой. Помните, нет хороших или плохих типов тела.</p>
+            <h4>Большой и указательный палец:</h4>
+            <p>Эктоморф - обертывание с легкостью<br/>Мезоморф - прикосновения друг к другу<br/>Эндоморф - не вступает в контакт</p>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Выберите проблемные области</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-checkbox fz-medium">
+            <input type="checkbox" name="q-2" value="Слабая грудь"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Слабая грудь</div>
+          </label>
+          <label class="input-checkbox fz-medium">
+            <input type="checkbox" name="q-2" value="Тонкие руки"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Тонкие руки</div>
+          </label>
+          <label class="input-checkbox fz-medium">
+            <input type="checkbox" name="q-2" value="Пивной живот"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Пивной живот</div>
+          </label>
+          <label class="input-checkbox fz-medium">
+            <input type="checkbox" name="q-2" value="Большие бока"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Большие бока</div>
+          </label>
+          <label class="input-checkbox fz-medium">
+            <input type="checkbox" name="q-2" value="Тонкие ноги"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-checkbox-main-text">Тонкие ноги</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h3>Ваши физические показатели</h3>
+        <div class="quiz-answer-frame">
+          <label class="input-text">
+            <input type="number" placeholder="Рост"/><span>См</span>
+          </label>
+          <label class="input-text">
+            <input type="number" placeholder="Вес"/><span>Кг</span>
+          </label>
+          <label class="input-text">
+            <input type="number" placeholder="Целевой вес"/><span>Кг</span>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question"> 
+        <h3>Уровень физической подготовки</h3>
+        <p>Какой у тебя уровень физической подготовки?</p>
+        <p>Выберите свой текущий уровень физической подготовки, чтобы согласовать план тренировок.</p>
+        <div class="quiz-answer-frame">
+          <label class="input-radio fz-medium">
+            <input type="radio" name="q-4" value="Не занимаюсь фитнесом" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Не занимаюсь фитнесом</div>
+          </label>
+          <label class="input-radio fz-medium">
+            <input type="radio" name="q-4" value="Занимаюсь 1-2 раза в неделю" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Занимаюсь 1-2 раза в неделю</div>
+          </label>
+          <label class="input-radio fz-medium">
+            <input type="radio" name="q-4" value="Занимаюсь 2-3 раза в неделю" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Занимаюсь 2-3 раза в неделю</div>
+          </label>
+          <label class="input-radio fz-medium">
+            <input type="radio" name="q-4" value="Занимаюсь 4 и более раз в неделю" autonext="autonext"/>
+            <div class="input-icon">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path d="M9.667,17.787a2.36,2.36,0,0,0,1.679-.7l8.715-8.715L17.939,6.256,9.667,14.528,6.061,10.923,3.939,13.044l4.048,4.048A2.362,2.362,0,0,0,9.667,17.787Z"></path>
+                <path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0Zm0,21H3V3H21Z"></path>
+              </svg>
+            </div>
+            <div class="input-radio-main-text">Занимаюсь 4 и более раз в неделю</div>
+          </label>
+        </div>
+      </div>
+      <div class="quiz-question"> 
+        <h3>Нравится или не нравится</h3>
+        <div class="quiz-answer-frame">
+          <div class="quiz-liker">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Приседания</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Подтягивания</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Отжимания</div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-liker-vote-group">
+              <div class="quiz-liker-vote yes" data-val="Да">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                  <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                  <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                </svg>Да
+              </div>
+              <div class="quiz-liker-vote neutral" data-val="Нейтрально">Нейтрально</div>
+              <div class="quiz-liker-vote no" data-val="Нет"> 
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                  <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                  <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                </svg>Нет
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-question"> 
+        <h3>Нравится или не нравится</h3>
+        <div class="quiz-answer-frame">
+          <div class="quiz-liker">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_1.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Приседания</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Подтягивания</div>
+                </div>
+                <div class="swiper-slide quiz-liker-item"><img class="quiz-liker-img" src="./assets/images/q-5_liker_2.jpg" loading="lazy"/>
+                  <div class="quiz-liker-desc">Отжимания</div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-liker-vote-group">
+              <div class="quiz-liker-vote yes">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                  <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                  <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                </svg>Да
+              </div>
+              <div class="quiz-liker-vote neutral">Нейтрально</div>
+              <div class="quiz-liker-vote no">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                  <path d="M6,8H3a3,3,0,0,0-3,3v8a3,3,0,0,0,3,3H6Z"></path>
+                  <path d="M14,8l.555-3.328a2.269,2.269,0,0,0-1.264-2.486,2.247,2.247,0,0,0-2.9,1.037L8,8V22H22l2-11V8Z"></path>
+                </svg>Нет
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</main>

@@ -368,7 +368,7 @@
 
 .input-radio-main-text {
     font-size: 28px;
-    margin-right: 30px;
+    // margin-right: 30px;
 
     @include respond-to (small) {
         font-size: 20px;
@@ -425,6 +425,10 @@
         font-size: 20px;
         padding: 16px 24px;
         background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &.email {
+        padding-left: 8px;
     }
 
     &:not(:first-child) {
@@ -572,4 +576,28 @@
     text-align: center;
     display: none;
     margin-top: 32px;
+}
+
+.mob-icon {
+    display: none;
+    margin-right: 16px;
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
+    @include respond-to (medium) {
+        display: inline-flex;
+    }
+}
+
+.input-radio-answer {
+    margin-right: 32px;
+}
+
+.input-radio,
+.input-checkbox,
+.input-text {
+    @include respond-to (medium) {
+        display: flex;
+        align-items: center;
+    }
 }
