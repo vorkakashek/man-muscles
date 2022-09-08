@@ -575,12 +575,19 @@ footer {
 .link-banner.purple img {
   margin-left: 16px;
 }
+@media only screen and (max-width: 575.9px) {
+  .link-banner.purple img {
+    margin-left: 8px;
+    max-width: 100px;
+  }
+}
 .link-banner.white {
   background-image: url("./../assets/images/link-banner-2.webp");
   color: #303030;
 }
 .link-banner.white img {
   margin-left: 16px;
+  max-height: 200px;
 }
 @media only screen and (max-width: 575.9px) {
   .link-banner.white {
@@ -588,7 +595,7 @@ footer {
         flex-direction: row-reverse;
   }
   .link-banner.white img {
-    max-height: 140px;
+    max-height: 100px;
   }
 }
 .link-banner:hover .link-banner-text {
@@ -604,14 +611,14 @@ footer {
 }
 @media only screen and (max-width: 575.9px) {
   .link-banner {
-    height: calc(var(--index) * 6 + 40px);
+    height: calc(var(--index) * 6 + 20px);
     width: 100%;
     -ms-flex: unset;
         flex: unset;
     margin-right: 0 !important;
   }
   .link-banner:last-child {
-    margin-top: 24px;
+    margin-top: 8px;
   }
 }
 
@@ -634,8 +641,9 @@ footer {
 }
 @media only screen and (max-width: 575.9px) {
   .link-banner-text {
-    font-size: calc(var(--index) * 1.5);
+    font-size: 14px;
     margin-left: 4px;
+    padding: 8px;
   }
 }
 
@@ -650,7 +658,7 @@ footer {
   .link-banner-group {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin: 42px 0 32px 0;
+    margin: 24px 0 18px 0;
   }
 }
 
@@ -658,20 +666,20 @@ footer {
   margin: 32px 0;
 }
 
-.payment-content {
+.payment-content-row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: end;
       align-items: flex-end;
 }
 @media only screen and (max-width: 767.9px) {
-  .payment-content {
+  .payment-content-row {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 @media only screen and (max-width: 767.9px) {
-  .payment-content h2 {
+  .payment-content-row h2 {
     font-size: calc(var(--index) * 2.5 + 4px);
   }
 }
@@ -735,6 +743,11 @@ footer {
 }
 .payment-content-image img {
   width: 100%;
+}
+@media only screen and (max-width: 1399.9px) {
+  .payment-content-image img {
+    max-height: 290px;
+  }
 }
 
 .payment-content-graphics-from,
@@ -1413,7 +1426,6 @@ body {
   background-repeat: no-repeat;
   background-position: top left;
   background-attachment: fixed;
-  /* Use vh as a fallback for browsers that do not support Custom Properties */
 }
 
 main.fullscreen {
@@ -1426,6 +1438,18 @@ main.fullscreen {
   display: flex;
   padding: 8px !important;
   max-width: unset;
+}
+
+@media only screen and (max-width: 575.9px) {
+  #payment-page h1 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 575.9px) {
+  #payment-page .header-logo img {
+    width: 70px;
+    min-width: unset;
+  }
 }
 
 #quiz {
@@ -1544,6 +1568,11 @@ a:hover {
   -ms-flex-pack: justify;
       justify-content: space-between;
   margin-bottom: 26px;
+}
+@media only screen and (max-width: 575.9px) {
+  .header {
+    margin-bottom: 16px;
+  }
 }
 
 .header-logo {
@@ -1711,6 +1740,11 @@ a:hover {
   -ms-flex-align: center;
       align-items: center;
   color: rgb(147, 147, 147);
+}
+.input-item input {
+  all: revert;
+  position: absolute;
+  opacity: 0;
 }
 .input-item input:checked ~ .checkbox {
   background-color: var(--purple);

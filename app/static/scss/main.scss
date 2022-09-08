@@ -42,27 +42,10 @@ body {
     background-repeat: no-repeat;
     background-position: top left;
     background-attachment: fixed;
-    // min-height: 100vh;
-    // overflow: hidden;
-    // min-height: 100vh;
-    // position: fixed;
-    // width: 100vw;
-    // height: 100vh;
-    /* Use vh as a fallback for browsers that do not support Custom Properties */
-    // height: calc(var(--vh, 1vh) * 100);
 }
 
-main {
-    // @include respond-to (small) {
-    //     position: fixed;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     display: flex;
-    //     padding: 8px !important;
-    // }
 
+main {
     &.fullscreen {
         position: fixed;
         width: 100%;
@@ -75,24 +58,31 @@ main {
     }
 }
 
-#quiz {
-    // @include respond-to (small) {
-    //     display: flex;
-    //     min-height: unset;
-    //     height: unset;
-    //     margin: 0;
-    //     width: 100%;
-    // }
+#payment-page {
+    h1 {
+        @include respond-to (handlers) {
+            font-size: 32px;
+        }
+    }
 
+    .header-logo {
+        @include respond-to (handlers) {
+            img {
+                width: 70px;
+                min-width: unset;
+            }
+        }
+    }
+}
+
+#quiz {
     display: flex;
     min-height: unset;
     height: unset;
     margin: 0 auto;
-    // width: 100%;
     width: 100%;
     max-width: 1360px;
     max-height: 960px;
-    // height: fit-content;
 }
 
 .container {
@@ -201,6 +191,10 @@ a {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 26px;
+
+    @include respond-to (handlers) {
+        margin-bottom: 16px;
+    }
 }
 
 .header-logo {
@@ -392,6 +386,9 @@ a {
     color: rgb(147, 147, 147);
 
     input {
+        all: revert;
+        position: absolute;
+        opacity: 0;
         &:checked {
             ~.checkbox {
                 background-color: var(--purple);

@@ -1,4 +1,4 @@
-main.container
+main.container#payment-page
     include ../_common/header
     h1 Ваш персональный план 
         br
@@ -14,49 +14,49 @@ main.container
             .link-banner-text
                 span Ежедневная тренировка от тренера ManMuscles
 
-    .payment-content
-        .payment-content-column
-            .payment-content-arrow
-                h2 Получите 
-                    br 
-                    | свой план за
-                .payment-content-price
-                    span 345р
-                    span в неделю
+    form.payment-content(action="#")
+        .payment-content-row
+            .payment-content-column
+                .payment-content-arrow
+                    h2 Получите 
+                        br 
+                        | свой план за
+                    .payment-content-price
+                        span 345р
+                        span в неделю
 
-                img(src="./assets/images/arrow.webp" alt="" loading="lazy")
+                    img(src="./assets/images/arrow.webp" alt="" loading="lazy")
 
-            a.btn-large(href="#") оформить заказ
-            
-        .payment-content-column
-            .payment-content-image
-                img(src="./assets/images/graphics.webp" alt="" loading="lazy")
-                .payment-content-graphics-from 75кг
-                .payment-content-graphics-to Ваша цель
-                
-                .payment-content-graphics-dates 
-                    .graphics-dates__start 19 июля
-                    .graphics-dates__end 9 августа
+                button.btn-large(type="submit") Оформить заказ
+
+            .payment-content-column
+                .payment-content-image
+                    img(src="./assets/images/graphics.webp" alt="" loading="lazy")
+                    .payment-content-graphics-from 75кг
+                    .payment-content-graphics-to Ваша цель
+
+                    .payment-content-graphics-dates 
+                        .graphics-dates__start 19 июля
+                        .graphics-dates__end 9 августа
 
         
-
-    .input-group
-        label.input-item
-            input(type="checkbox") 
-            span.checkbox
-            span Продолжая, я соглашаюсь с 
-                a(href="#") Условия использования
-                | , 
-                a(href="#") Политика конфеденциальности
-                | , 
-                a(href="#") Полтитика возврата
-                | , 
-                a(href="#") Условия подписки
-                | , 
-                a(href="#") Политика cookies
-        label.input-item
-            input(type="checkbox") 
-            span.checkbox
-            span Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.
+        .input-group
+            label.input-item
+                input(type="checkbox" name="terms" required) 
+                span.checkbox
+                span Продолжая, я соглашаюсь с 
+                    a(href="#") Условия использования
+                    | , 
+                    a(href="#") Политика конфеденциальности
+                    | , 
+                    a(href="#") Полтитика возврата
+                    | , 
+                    a(href="#") Условия подписки
+                    | , 
+                    a(href="#") Политика cookies
+            label.input-item
+                input(type="checkbox" checked) 
+                span.checkbox
+                span Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.
 
     include pay-info
