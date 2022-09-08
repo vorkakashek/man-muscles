@@ -9,22 +9,22 @@
   </div>
   <h1>
      Создайте своё <br/>идеальное тело</h1>
-  <form id="start-quiz">
+  <form id="start-quiz" action="#">
     <div class="label">Выберите свою цель: </div>
     <div class="start-quiz-select-group">
-      <button class="start-quiz-select">
+      <button class="start-quiz-select" type="submit">
         <picture class="start-quiz-select__img">
           <source media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-1-768.webp"/><img src="./assets/images/start-quiz-select-1.webp" alt=""/>
         </picture>
         <div class="start-quiz-select__name">Похудеть</div>
       </button>
-      <button class="start-quiz-select">
+      <button class="start-quiz-select" type="submit">
         <picture class="start-quiz-select__img">
           <source media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-2-768.webp"/><img src="./assets/images/start-quiz-select-2.webp" alt=""/>
         </picture>
         <div class="start-quiz-select__name">Увеличение <br/>мышечной массы</div>
       </button>
-      <button class="start-quiz-select">
+      <button class="start-quiz-select" type="submit">
         <picture class="start-quiz-select__img">
           <source media="(max-width: 768px)" srcset="./assets/images/start-quiz-select-3-768.webp"/><img src="./assets/images/start-quiz-select-3.webp" alt=""/>
         </picture>
@@ -33,10 +33,10 @@
     </div>
     <div class="start-quiz-input-group">
       <label class="input-item">
-        <input type="checkbox"/><span class="checkbox"></span><span>Продолжая, я соглашаюсь с <a href="#">Условия использования</a>, <a href="#">Политика конфеденциальности</a>, <a href="#">Полтитика возврата</a>, <a href="#">Условия подписки</a>, <a href="#">Политика cookies</a></span>
+        <input type="checkbox" required="required"/><span class="checkbox"></span><span>Продолжая, я соглашаюсь с <a href="#">Условия использования</a>, <a href="#">Политика конфеденциальности</a>, <a href="#">Полтитика возврата</a>, <a href="#">Условия подписки</a>, <a href="#">Политика cookies</a></span>
       </label>
       <label class="input-item">
-        <input type="checkbox"/><span class="checkbox"></span><span>Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.</span>
+        <input type="checkbox" checked="checked"/><span class="checkbox"></span><span>Я хочу получать новости о продуктах, услугах и специальных предложениях от ManMuscles по электронной почте.</span>
       </label>
     </div>
   </form>
