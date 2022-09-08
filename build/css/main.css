@@ -389,6 +389,9 @@ footer {
     width: 100%;
     text-align: center;
   }
+  .footer-contact-email span {
+    background-color: transparent;
+  }
 }
 
 .footer-contact-link-group {
@@ -648,6 +651,104 @@ footer {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 42px 0 32px 0;
+  }
+}
+
+.input-group {
+  margin: 32px 0;
+}
+
+.payment-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+}
+@media only screen and (max-width: 767.9px) {
+  .payment-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 767.9px) {
+  .payment-content h2 {
+    font-size: calc(var(--index) * 2.5 + 4px);
+  }
+}
+
+.payment-content-price {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 16px 0;
+}
+.payment-content-price span {
+  padding: 8px 16px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.payment-content-price span:first-child {
+  font-family: Bebas Neue, sans-serif;
+  font-size: calc(var(--index) * 2.25);
+  background-color: rgba(83, 15, 255, 0.5);
+}
+@media only screen and (max-width: 1199.9px) {
+  .payment-content-price span:first-child {
+    font-size: calc(var(--index) * 3 + 4px);
+  }
+}
+.payment-content-price span:last-child {
+  background-color: rgba(83, 15, 255, 0.2);
+  font-size: calc(var(--index) * 1);
+  padding: 8px 32px;
+}
+@media only screen and (max-width: 991.9px) {
+  .payment-content-price span:last-child {
+    font-size: 18px;
+  }
+}
+
+.payment-content-column {
+  -ms-flex: 1 1 0px;
+      flex: 1 1 0;
+  position: relative;
+}
+.payment-content-column:last-child {
+  margin-left: 16px;
+}
+@media only screen and (max-width: 767.9px) {
+  .payment-content-column {
+    -ms-flex: unset;
+        flex: unset;
+    width: 100%;
+  }
+  .payment-content-column:last-child {
+    margin-left: 0;
+    margin-top: 32px;
+  }
+}
+
+.payment-content-image {
+  width: 100%;
+}
+
+.payment-content-arrow {
+  position: relative;
+}
+.payment-content-arrow img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (max-width: 991.9px) {
+  .payment-content-arrow img {
+    width: 50%;
+    right: 20px;
   }
 }
 
@@ -1577,9 +1678,11 @@ a:hover {
   box-shadow: 0 4px 0 rgba(83, 15, 255, 0.7);
   position: relative;
   transition: var(--tr);
+  text-decoration: none;
   margin-top: 0;
 }
 .btn-large:hover {
   -webkit-filter: brightness(1.25);
           filter: brightness(1.25);
+  color: #fff;
 }

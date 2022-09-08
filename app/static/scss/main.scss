@@ -435,9 +435,11 @@ a {
     position: relative;
     transition: var(--tr);
     // margin: 16px;
+    text-decoration: none;
     margin-top: 0;
 
     &:hover {
         filter: brightness(1.25);
+        color: #fff;
     }
 }

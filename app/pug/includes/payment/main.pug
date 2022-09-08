@@ -15,9 +15,22 @@ main.container
                 span Ежедневная тренировка от тренера ManMuscles
 
     .payment-content
-        h2 Получите свой
-            br 
-            | план за
+        .payment-content-column
+            .payment-content-arrow
+                h2 Получите 
+                    br 
+                    | свой план за
+                .payment-content-price
+                    span 345р
+                    span в неделю
+
+                img(src="./assets/images/arrow.webp" alt="" loading="lazy")
+
+            a.btn-large(href="#") оформить заказ
+            
+        .payment-content-column
+            img.payment-content-image(src="./assets/images/graphics.webp" alt="" loading="lazy")
+        
 
     .input-group
         label.input-item
