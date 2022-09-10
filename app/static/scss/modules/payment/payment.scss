@@ -108,6 +108,7 @@
 
         img {
             margin-left: 16px;
+
             @include respond-to (handlers) {
                 margin-left: 8px;
                 max-width: 100px;
@@ -124,7 +125,7 @@
             max-height: 200px;
         }
 
-        @include respond-to (handlers) {
+        @include respond-to (small) {
             flex-direction: row-reverse;
 
             img {
@@ -139,15 +140,45 @@
         }
     }
 
-    @include respond-to(large) {
-        height: calc(var(--index) * 6);
+    @media only screen and (max-height: 800px) {
+        // height: calc(var(--index) * 6);
+        height: 100px;
 
         img {
-            max-width: 30%;
+            object-fit: contain;
+            object-position: bottom;
+            max-width: 25%;
+            z-index: 0;
+            position: relative;
+            height: 160px;
+        }
+
+        .link-banner-text {
+            margin-left: 0;
         }
     }
 
-    @include respond-to (handlers) {
+    @include respond-to(medium) {
+        // height: calc(var(--index) * 6);
+        height: 100px;
+
+        img {
+            object-fit: contain;
+            object-position: bottom;
+            max-width: 25%;
+            z-index: 0;
+            position: relative;
+            height: 110px;
+        }
+
+        .link-banner-text {
+            margin-left: 0;
+        }
+    }
+
+
+
+    @include respond-to (small) {
         height: calc(var(--index) * 6 + 20px);
         width: 100%;
         flex: unset;
@@ -173,6 +204,10 @@
         font-size: calc(var(--index) * 1);
     }
 
+    @media only screen and (max-height: 800px) {
+        font-size: calc(var(--index) * 1);
+    }
+
     @include respond-to(handlers) {
         // font-size: calc(var(--index) * 1.5);
         font-size: 14px;
@@ -186,7 +221,7 @@
     align-items: center;
     margin: 80px 0 32px 0;
 
-    @include respond-to(handlers) {
+    @include respond-to(small) {
         flex-wrap: wrap;
         margin: 24px 0 18px 0;
     }
@@ -229,6 +264,10 @@
             @include respond-to(large) {
                 font-size: calc(var(--index) * 3 + 4px);
             }
+
+            @media only screen and (max-height: 800px) {
+                font-size: calc(var(--index) * 3 + 4px);
+            }
         }
 
         &:last-child {
@@ -269,7 +308,12 @@
 
     img {
         width: 100%;
+
         @include respond-to (xlarge) {
+            max-height: 290px;
+        }
+
+        @media only screen and (max-height: 800px) {
             max-height: 290px;
         }
     }

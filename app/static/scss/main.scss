@@ -120,6 +120,15 @@ h1 {
         }
     }
 
+    @media only screen and (max-height: 800px) {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+
+        br {
+            display: none;
+        }
+    }
+
     @include respond-to (large) {
         font-size: 4rem;
         margin-bottom: 2rem;
@@ -389,6 +398,7 @@ a {
         all: revert;
         position: absolute;
         opacity: 0;
+
         &:checked {
             ~.checkbox {
                 background-color: var(--purple);

@@ -589,7 +589,7 @@ footer {
   margin-left: 16px;
   max-height: 200px;
 }
-@media only screen and (max-width: 575.9px) {
+@media only screen and (max-width: 767.9px) {
   .link-banner.white {
     -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
@@ -601,15 +601,43 @@ footer {
 .link-banner:hover .link-banner-text {
   opacity: 0.5;
 }
-@media only screen and (max-width: 1199.9px) {
+@media only screen and (max-height: 800px) {
   .link-banner {
-    height: calc(var(--index) * 6);
+    height: 100px;
   }
   .link-banner img {
-    max-width: 30%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: bottom;
+       object-position: bottom;
+    max-width: 25%;
+    z-index: 0;
+    position: relative;
+    height: 160px;
+  }
+  .link-banner .link-banner-text {
+    margin-left: 0;
   }
 }
-@media only screen and (max-width: 575.9px) {
+@media only screen and (max-width: 991.9px) {
+  .link-banner {
+    height: 100px;
+  }
+  .link-banner img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: bottom;
+       object-position: bottom;
+    max-width: 25%;
+    z-index: 0;
+    position: relative;
+    height: 110px;
+  }
+  .link-banner .link-banner-text {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 767.9px) {
   .link-banner {
     height: calc(var(--index) * 6 + 20px);
     width: 100%;
@@ -639,6 +667,11 @@ footer {
     font-size: calc(var(--index) * 1);
   }
 }
+@media only screen and (max-height: 800px) {
+  .link-banner-text {
+    font-size: calc(var(--index) * 1);
+  }
+}
 @media only screen and (max-width: 575.9px) {
   .link-banner-text {
     font-size: 14px;
@@ -654,7 +687,7 @@ footer {
       align-items: center;
   margin: 80px 0 32px 0;
 }
-@media only screen and (max-width: 575.9px) {
+@media only screen and (max-width: 767.9px) {
   .link-banner-group {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -706,6 +739,11 @@ footer {
     font-size: calc(var(--index) * 3 + 4px);
   }
 }
+@media only screen and (max-height: 800px) {
+  .payment-content-price span:first-child {
+    font-size: calc(var(--index) * 3 + 4px);
+  }
+}
 .payment-content-price span:last-child {
   background-color: rgba(83, 15, 255, 0.2);
   font-size: calc(var(--index) * 1);
@@ -745,6 +783,11 @@ footer {
   width: 100%;
 }
 @media only screen and (max-width: 1399.9px) {
+  .payment-content-image img {
+    max-height: 290px;
+  }
+}
+@media only screen and (max-height: 800px) {
   .payment-content-image img {
     max-height: 290px;
   }
@@ -1485,6 +1528,15 @@ h1 {
           animation: h1 1.5s cubic-bezier(0, 0.5, 0.25, 0.9) backwards;
 }
 @media only screen and (max-width: 1399.9px) {
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+  h1 br {
+    display: none;
+  }
+}
+@media only screen and (max-height: 800px) {
   h1 {
     font-size: 5rem;
     margin-bottom: 2rem;
