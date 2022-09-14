@@ -6,7 +6,6 @@
     "private": true,
     "dependencies": {
         "core-util-is": "^1.0.2",
-        "gulp": "^4.0.2",
         "swiper": "^8.3.2"
     },
     "scripts": {
@@ -32,6 +31,7 @@
         "@babel/preset-env": "^7.12.1",
         "browser-sync": "^2.27.4",
         "del": "^6.0.0",
+        "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
         "gulp-babel": "^8.0.0",
         "gulp-cheerio": "^1.0.0",

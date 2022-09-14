@@ -413,6 +413,7 @@
         font-size: 20px;
         appearance: textfield;
         width: 100%;
+        min-height: 56px;
 
         &::-webkit-inner-spin-button {
             display: none;
@@ -428,7 +429,7 @@
     }
 
     &.email {
-        padding-left: 8px;
+        // padding-left: 8px;
     }
 
     &:not(:first-child) {
